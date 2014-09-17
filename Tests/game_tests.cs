@@ -76,6 +76,13 @@ namespace TicTacToe
       Assert.IsTrue(game.IsDraw());
     }
 
+    [Test]
+    //Game in undecided state
+    public void IsUndecided()
+    {
+      Assert.IsTrue(game.IsUndecided());
+    }
+
     public void _setupChallengerWin()
     {
       game.Go(0,0);

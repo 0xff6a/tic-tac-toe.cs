@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="Application/application.exe" total="14" failures="0" not-run="0" date="2014-09-17" time="17:12:51">
+<test-results name="Application/application.exe" total="15" failures="0" not-run="0" date="2014-09-17" time="17:59:06">
   <environment nunit-version="2.4.8.0" clr-version="2.0.50727.1433" os-version="Unix 13.3.0.0" platform="Unix" cwd="/Users/jeremyfox/Csharp/tic-tac-toe.cs" machine-name="the-fox.lan" user="jeremyfox" user-domain="the-fox.lan" />
   <culture-info current-culture="en-GB" current-uiculture="en-GB" />
   <test-suite name="Application/application.exe" success="True" time="0.033" asserts="0">
     <results>
-      <test-suite name="TicTacToe" success="True" time="0.020" asserts="0">
+      <test-suite name="TicTacToe" success="True" time="0.021" asserts="0">
         <results>
           <test-suite name="GameTest" success="True" time="0.016" asserts="0">
             <results>
@@ -13,6 +13,7 @@
               <test-case name="TicTacToe.GameTest.CurrentPlayer" executed="True" success="True" time="0.000" asserts="1" />
               <test-case name="TicTacToe.GameTest.HasWinner" executed="True" success="True" time="0.001" asserts="1" />
               <test-case name="TicTacToe.GameTest.IsDraw" executed="True" success="True" time="0.000" asserts="1" />
+              <test-case name="TicTacToe.GameTest.IsUndecided" executed="True" success="True" time="0.000" asserts="1" />
               <test-case name="TicTacToe.GameTest.Moves" executed="True" success="True" time="0.001" asserts="1" />
               <test-case name="TicTacToe.GameTest.Start" executed="True" success="True" time="0.000" asserts="3" />
               <test-case name="TicTacToe.GameTest.Winner" executed="True" success="True" time="0.000" asserts="1" />

@@ -19,7 +19,7 @@ namespace TicTacToeApplication
 
       game = new Game(pName, oName);
 
-      while(game.Winner == null && !game.IsDraw())
+      while(game.IsUndecided())
       {
         Console.WriteLine(game.Board.Display());
         Console.WriteLine("Enter your move e.g row-column");

@@ -74,6 +74,11 @@ namespace TicTacToe
       return moveCount() == maxMoves && winner == null;
     }
 
+    public bool IsUndecided()
+    {
+      return Winner == null && !IsDraw();
+    }
+
     private int moveCount()
     {
       int count = 0;
