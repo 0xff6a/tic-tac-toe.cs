@@ -17,6 +17,7 @@ namespace TicTacToeComponents
     }
 
     [Test]
+    //Space can be marked
     public void Mark()
     {
       mark = 'X';
@@ -26,6 +27,7 @@ namespace TicTacToeComponents
     }
 
     [Test]
+    //Boolean IsEmpty method
     public void IsEmpty()
     {
       Assert.IsTrue(space.IsEmpty());
@@ -49,17 +51,24 @@ namespace TicTacToeComponents
     }
 
     [Test]
+    //Grid holds 3x3 spaces
     public void Spaces()
     {
-      Space[ , ] expected = new Space[3,3];
-
-      Assert.AreEqual(expected, grid.Spaces);
+      CollectionAssert.AllItemsAreInstancesOfType(grid.Spaces, typeof(Space));
     }
 
     [Test]
+    //Grid can be printed to a string
     public void Display()
     {
-       
+      string expected = "X | - | - \n- | - | -\n- | - | -";
+      char mark = 'X';
+      Space s = new Space();
+      //grid.Spaces[0,0].Mark(mark);
+
+      Assert.AreEqual(s, 1);
+      Assert.AreEqual(expected, grid.Display());
     }
+
   }
 }
