@@ -61,12 +61,10 @@ namespace TicTacToeComponents
     //Grid can be printed to a string
     public void Display()
     {
-      string expected = "X | - | - \n- | - | -\n- | - | -";
+      string expected = "X | - | -\n- | - | -\n- | - | -\n";
       char mark = 'X';
-      Space s = new Space();
-      //grid.Spaces[0,0].Mark(mark);
+      grid.Spaces[0,0].Mark(mark);
 
-      Assert.AreEqual(s, 1);
       Assert.AreEqual(expected, grid.Display());
     }
 

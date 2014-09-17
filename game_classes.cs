@@ -47,11 +47,18 @@ namespace TicTacToeComponents
     {
       string result = "";
       
-      result += '-'; 
+      for( int i = 0; i < size; i++) 
+      {
+        for( int j = 0; j < size; j++)
+        {
+          result += spaces[i,j].Content; 
+          if( j != 2) { result += " | "; }
+        }
+        result += '\n';
+      }
 
       return result;
     }
-
 
   }
 }
