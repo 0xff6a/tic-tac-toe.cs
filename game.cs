@@ -7,6 +7,7 @@ namespace TicTacToe
     private Player challenger;
     private Player opponent;
     private Player[] players;
+    private Player winner;
     private Grid board;
     public const int maxMoves = Grid.size * Grid.size;
 
@@ -26,6 +27,11 @@ namespace TicTacToe
     public Player Opponent
     {
       get { return opponent; }
+    }
+    
+    public Player Winner
+    {
+      get { return winner; }
     }
 
     public Grid Board 
@@ -48,6 +54,12 @@ namespace TicTacToe
     public void Go(int row, int column)
     {
       CurrentPlayer().MarkGridAt(row, column, board);
+      
+      if(HasWinner(row, column))
+      {
+        winner = CurrentPlayer();
+      }
+      
       ChangeTurn();
     }
 

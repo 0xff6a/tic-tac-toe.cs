@@ -71,7 +71,9 @@ namespace TicTacToe
     //Returning the winner
     public void Winner()
     {
+      _setupChallengerWin();
 
+      Assert.AreEqual(game.Challenger, game.Winner);
     }
 
     public void _setupChallengerWin()
