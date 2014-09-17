@@ -8,6 +8,7 @@ namespace TicTacToe
     private Player opponent;
     private Player[] players;
     private Grid board;
+    public const int maxMoves = Grid.size * Grid.size;
 
     public Game(string challengerName, string opponentName)
     {
@@ -47,12 +48,28 @@ namespace TicTacToe
     public void Go(int row, int column)
     {
       CurrentPlayer().MarkGridAt(row, column, board);
+      ChangeTurn();
     }
 
     public bool HasWinner(int lastMoveRow, int lastMoveColumn)
     {
       return IsRowCompleted(lastMoveRow) || IsColumnCompleted(lastMoveColumn) ||
           IsDiagonalCompleted(lastMoveRow, lastMoveColumn);
+    }
+
+    public bool IsDraw(int lastMoveRow, int lastMoveColumn)
+    {
+      return moveCount() == maxMoves && !HasWinner(lastMoveRow, lastMoveColumn);
+    }
+
+    private int moveCount()
+    {
+      int count = 0;
+      foreach(Space s in board.Spaces)
+      {
+        if(s.Content != '-') { count++; }
+      }
+      return count;
     }
 
     private bool IsRowCompleted(int row)

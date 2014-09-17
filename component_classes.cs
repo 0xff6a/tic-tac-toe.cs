@@ -22,7 +22,7 @@ namespace TicTacToeComponents
 
   public class Grid
   {
-    private static int size = 3;
+    public const int size = 3;
     private Space[ , ] spaces = new Space[size, size];
 
     public Grid()

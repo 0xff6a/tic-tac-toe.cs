@@ -42,7 +42,7 @@ namespace TicTacToe
 
     [Test]
     //making a move
-    public void GameConclusion()
+    public void Moves()
     {
       game.Go(0,0);
 
@@ -55,14 +55,16 @@ namespace TicTacToe
     {
       _setupChallengerWin();
 
-      Assert.IsTrue(game.HasWinner(0, 2));
+      Assert.IsTrue(game.HasWinner(0,2));
     }
 
     [Test]
     //Checking for a draw
     public void IsDraw()
     {
+      _setupDraw();
 
+      Assert.IsTrue(game.IsDraw(2,1));
     }
 
     [Test]
@@ -79,6 +81,19 @@ namespace TicTacToe
       game.Go(1,1);
       game.Go(2,1);
       game.Go(2,2);
+    }
+
+    public void _setupDraw()
+    {
+      game.Go(0,0);
+      game.Go(0,1);
+      game.Go(0,2);
+      game.Go(1,0);
+      game.Go(2,0);
+      game.Go(1,1);
+      game.Go(1,2);
+      game.Go(2,2);
+      game.Go(2,1);
     }
 
   }
