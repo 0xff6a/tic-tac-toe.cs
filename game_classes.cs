@@ -59,6 +59,27 @@ namespace TicTacToeComponents
 
       return result;
     }
+  }
 
+  public class Player 
+  {
+    private string name;
+    private char mark;
+
+    public Player(string nm, char mk)
+    {
+      name = nm;
+      mark = mk;
+    }
+
+    public string Name 
+    {
+      get { return name; }
+    }
+
+    public char XorO
+    {
+      get { return mark; }
+    }
   }
 }

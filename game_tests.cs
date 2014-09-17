@@ -69,4 +69,33 @@ namespace TicTacToeComponents
     }
 
   }
+
+  [TestFixture]
+  //Player class tests
+  public class PlayerTest
+  {
+    Player player;
+
+    [SetUp]
+    public void Init()
+    {
+      player = new Player("Jeremy", 'X');
+    }
+
+    [Test]
+    //Name attribute
+    public void Name()
+    {
+      Assert.AreEqual("Jeremy", player.Name);
+    }
+
+    [Test]
+    //Mark attribute
+    public void XorO()
+    {
+      Assert.AreEqual('X', player.XorO);
+    }
+
+
+  }
 }
