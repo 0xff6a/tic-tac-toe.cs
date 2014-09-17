@@ -1,4 +1,6 @@
 using System;
+using TicTacToe;
+using TicTacToeComponents;
 
 namespace TicTacToeApplication
 {
@@ -6,7 +8,7 @@ namespace TicTacToeApplication
   {
     public static void Main()
     {
-      Console.WriteLine("Hello Tic Tac Toe World");
+      Console.WriteLine("Welcome to Tic Tac Toe");
     }
   }
 }
