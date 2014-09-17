@@ -43,5 +43,15 @@ namespace TicTacToe
       players[0] = players[1];
       players[1] = tempPlayer;
     }
+
+    public void Go(int row, int column)
+    {
+      CurrentPlayer().MarkGridAt(row, column, board);
+    }
+
+    public bool IsWinner()
+    {
+      return false;
+    }
   }
 }

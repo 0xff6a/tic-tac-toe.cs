@@ -16,7 +16,7 @@ namespace TicTacToe
     }
 
     [Test]
-    //Initializing the game with 2 players and a grid
+    //Initializing the game with 2 players and a board
     public void Start()
     {
       Assert.AreEqual("Me", game.Challenger.Name);
@@ -39,5 +39,47 @@ namespace TicTacToe
 
       Assert.AreEqual(game.Opponent, game.CurrentPlayer());
     }
+
+    [Test]
+    //making a move
+    public void GameConclusion()
+    {
+      game.Go(0,0);
+
+      Assert.AreEqual('X', game.Board.Spaces[0,0].Content);
+    }
+
+    [Test]
+    //Checking for a winner
+    public void IsWinner()
+    {
+      _setupChallengerWin();
+
+      Assert.IsTrue(game.IsWinner());
+    }
+
+    [Test]
+    //Checking for a draw
+    public void IsDraw()
+    {
+      
+    }
+
+    [Test]
+    //Returning the winner
+    public void Winner()
+    {
+
+    }
+
+    public void _setupChallengerWin()
+    {
+      game.Go(0,0);
+      game.Go(1,0);
+      game.Go(0,1);
+      game.Go(1,1);
+      game.Go(0,2);
+    }
+
   }
 }
