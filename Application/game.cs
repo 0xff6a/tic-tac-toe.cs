@@ -86,23 +86,19 @@ namespace TicTacToe
 
     private bool IsRowCompleted(int row)
     {
-      return !board.Spaces[row,0].IsEmpty() && board.Spaces[row, 0].Content == 
-          board.Spaces[row, 1].Content && board.Spaces[row, 1].Content == 
-              board.Spaces[row, 2].Content;
+      return IsMarkedRow(row) && IsUniformRow(row);
     }
 
     private bool IsColumnCompleted(int column)
     {
-      return !board.Spaces[0,column].IsEmpty() && board.Spaces[0, column].Content == 
-          board.Spaces[1, column].Content && board.Spaces[1, column].Content == 
-            board.Spaces[2, column].Content;
+      return IsMarkedColumn(column) && IsUniformColumn(column);
     }
 
     private bool IsDiagonalCompleted(int row, int column)
     {
       if(IsNotOnDiagonal(row, column)) { return false; }
 
-      return !board.Spaces[1,1].IsEmpty() && (IsCompleteDiagonal() || IsCompleteAntiDiagonal());
+      return IsCentreMarked() && (IsUniformDiagonal() || IsUniformAntiDiagonal());
     }
 
     private bool IsNotOnDiagonal(int row, int column)
@@ -110,16 +106,43 @@ namespace TicTacToe
       return row != column && row + column != 2;
     }
 
-    private bool IsCompleteDiagonal()
+    private bool IsUniformDiagonal()
     {
       return board.Spaces[0, 0].Content == board.Spaces[1, 1].Content && 
           board.Spaces[1, 1].Content == board.Spaces[2, 2].Content;
     }
 
-    private bool IsCompleteAntiDiagonal()
+    private bool IsUniformAntiDiagonal()
     {
       return board.Spaces[0, 2].Content == board.Spaces[1, 1].Content && 
           board.Spaces[1, 1].Content == board.Spaces[2, 0].Content;
+    }
+
+    private bool IsCentreMarked()
+    {
+      return !board.Spaces[1,1].IsEmpty();
+    }
+
+    private bool IsMarkedColumn(int column)
+    {
+      return !board.Spaces[0,column].IsEmpty();
+    }
+
+    private bool IsMarkedRow(int row)
+    {
+      return !board.Spaces[row,0].IsEmpty();
+    }
+
+    private bool IsUniformRow(int row)
+    {
+      return board.Spaces[row, 0].Content == board.Spaces[row, 1].Content && 
+          board.Spaces[row, 1].Content == board.Spaces[row, 2].Content;
+    }
+
+    private bool IsUniformColumn(int column)
+    {
+      return board.Spaces[0, column].Content == board.Spaces[1, column].Content && 
+          board.Spaces[1, column].Content == board.Spaces[2, column].Content;
     }
   }
 }
