@@ -69,9 +69,14 @@ namespace TicTacToe
 
     private bool IsDiagonalCompleted(int row, int column)
     {
-      if(row != column && row + column != 2) { return false; }
+      if(IsNotOnDiagonal(row, column)) { return false; }
 
       return IsCompleteDiagonal() || IsCompleteAntiDiagonal();
+    }
+
+    private bool IsNotOnDiagonal(int row, int column)
+    {
+      return row != column && row + column != 2;
     }
 
     private bool IsCompleteDiagonal()
