@@ -1,4 +1,3 @@
-using System;
 using NUnit.Framework;
 
 namespace TicTacToeComponents
@@ -61,11 +60,12 @@ namespace TicTacToeComponents
     //Grid can be printed to a string
     public void Display()
     {
-      string expected = "X | - | -\n- | - | -\n- | - | -\n";
+      string expectedStr = "X | - | -\n- | - | -\n- | - | -\n";
       char mark = 'X';
+
       grid.Spaces[0,0].Mark(mark);
 
-      Assert.AreEqual(expected, grid.Display());
+      Assert.AreEqual(expectedStr, grid.Display());
     }
 
   }

@@ -1,5 +1,3 @@
-using System;
-
 namespace TicTacToeComponents
 {
   public class Space
