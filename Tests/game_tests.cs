@@ -59,21 +59,21 @@ namespace TicTacToe
     }
 
     [Test]
-    //Checking for a draw
-    public void IsDraw()
-    {
-      _setupDraw();
-
-      Assert.IsTrue(game.IsDraw(2,1));
-    }
-
-    [Test]
     //Returning the winner
     public void Winner()
     {
       _setupChallengerWin();
 
       Assert.AreEqual(game.Challenger, game.Winner);
+    }
+
+    [Test]
+    //Checking for a draw
+    public void IsDraw()
+    {
+      _setupDraw();
+  
+      Assert.IsTrue(game.IsDraw());
     }
 
     public void _setupChallengerWin()

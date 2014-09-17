@@ -69,9 +69,9 @@ namespace TicTacToe
           IsDiagonalCompleted(lastMoveRow, lastMoveColumn);
     }
 
-    public bool IsDraw(int lastMoveRow, int lastMoveColumn)
+    public bool IsDraw()
     {
-      return moveCount() == maxMoves && !HasWinner(lastMoveRow, lastMoveColumn);
+      return moveCount() == maxMoves && winner == null;
     }
 
     private int moveCount()
@@ -86,21 +86,23 @@ namespace TicTacToe
 
     private bool IsRowCompleted(int row)
     {
-      return board.Spaces[row, 0].Content == board.Spaces[row, 1].Content && 
-          board.Spaces[row, 1].Content == board.Spaces[row, 2].Content;
+      return !board.Spaces[row,0].IsEmpty() && board.Spaces[row, 0].Content == 
+          board.Spaces[row, 1].Content && board.Spaces[row, 1].Content == 
+              board.Spaces[row, 2].Content;
     }
 
     private bool IsColumnCompleted(int column)
     {
-      return board.Spaces[0, column].Content == board.Spaces[1, column].Content && 
-          board.Spaces[1, column].Content == board.Spaces[2, column].Content;
+      return !board.Spaces[0,column].IsEmpty() && board.Spaces[0, column].Content == 
+          board.Spaces[1, column].Content && board.Spaces[1, column].Content == 
+            board.Spaces[2, column].Content;
     }
 
     private bool IsDiagonalCompleted(int row, int column)
     {
       if(IsNotOnDiagonal(row, column)) { return false; }
 
-      return IsCompleteDiagonal() || IsCompleteAntiDiagonal();
+      return !board.Spaces[1,1].IsEmpty() && (IsCompleteDiagonal() || IsCompleteAntiDiagonal());
     }
 
     private bool IsNotOnDiagonal(int row, int column)
