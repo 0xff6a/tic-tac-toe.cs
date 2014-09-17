@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="application.exe" total="8" failures="0" not-run="0" date="2014-09-17" time="12:21:59">
+<test-results name="application.exe" total="10" failures="0" not-run="0" date="2014-09-17" time="12:43:46">
   <environment nunit-version="2.4.8.0" clr-version="2.0.50727.1433" os-version="Unix 13.3.0.0" platform="Unix" cwd="/Users/jeremyfox/Csharp/tic-tac-toe.cs" machine-name="the-fox.lan" user="jeremyfox" user-domain="the-fox.lan" />
   <culture-info current-culture="en-GB" current-uiculture="en-GB" />
   <test-suite name="application.exe" success="True" time="0.028" asserts="0">
     <results>
-      <test-suite name="TicTacToe" success="True" time="0.014" asserts="0">
+      <test-suite name="TicTacToe" success="True" time="0.015" asserts="0">
         <results>
-          <test-suite name="GameTest" success="True" time="0.006" asserts="0">
+          <test-suite name="GameTest" success="True" time="0.011" asserts="0">
             <results>
-              <test-case name="TicTacToe.GameTest.Start" executed="True" success="True" time="0.004" asserts="2" />
+              <test-case name="TicTacToe.GameTest.ChangeTurn" executed="True" success="True" time="0.004" asserts="1" />
+              <test-case name="TicTacToe.GameTest.CurrentPlayer" executed="True" success="True" time="0.000" asserts="1" />
+              <test-case name="TicTacToe.GameTest.Start" executed="True" success="True" time="0.000" asserts="3" />
             </results>
           </test-suite>
         </results>
       </test-suite>
-      <test-suite name="TicTacToeComponents" success="True" time="0.009" asserts="0">
+      <test-suite name="TicTacToeComponents" success="True" time="0.008" asserts="0">
         <results>
           <test-suite name="GridTest" success="True" time="0.002" asserts="0">
             <results>
-              <test-case name="TicTacToeComponents.GridTest.Display" executed="True" success="True" time="0.001" asserts="1" />
+              <test-case name="TicTacToeComponents.GridTest.Display" executed="True" success="True" time="0.000" asserts="1" />
               <test-case name="TicTacToeComponents.GridTest.Spaces" executed="True" success="True" time="0.001" asserts="1" />
             </results>
           </test-suite>
@@ -31,7 +33,7 @@
           </test-suite>
           <test-suite name="SpaceTest" success="True" time="0.001" asserts="0">
             <results>
-              <test-case name="TicTacToeComponents.SpaceTest.IsEmpty" executed="True" success="True" time="0.000" asserts="2" />
+              <test-case name="TicTacToeComponents.SpaceTest.IsEmpty" executed="True" success="True" time="0.001" asserts="2" />
               <test-case name="TicTacToeComponents.SpaceTest.Mark" executed="True" success="True" time="0.000" asserts="1" />
             </results>
           </test-suite>
