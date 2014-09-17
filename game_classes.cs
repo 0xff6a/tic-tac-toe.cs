@@ -16,6 +16,11 @@ namespace TicTacToeComponents
       get { return content; }
     }
 
+    public bool IsEmpty()
+    {
+      return content == default(char);
+    }
+
 
   }
 }

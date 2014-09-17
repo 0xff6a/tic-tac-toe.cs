@@ -23,5 +23,15 @@ namespace TicTacToeComponents
 
       Assert.AreEqual(mark, space.Content);
     }
+
+    [Test]
+    public void IsEmpty()
+    {
+      Assert.IsTrue(space.IsEmpty());
+      
+      space.Mark('X');
+      
+      Assert.IsFalse(space.IsEmpty());
+    }
   }
 }
