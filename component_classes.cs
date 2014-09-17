@@ -81,5 +81,10 @@ namespace TicTacToeComponents
     {
       get { return mark; }
     }
+
+    public void MarkGridAt(int row, int column, Grid grid)
+    {
+      grid.Spaces[row, column].Mark(mark);
+    }
   }
 }

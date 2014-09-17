@@ -96,6 +96,15 @@ namespace TicTacToeComponents
       Assert.AreEqual('X', player.XorO);
     }
 
+    [Test]
+    //Player can mark the grid
+    public void MarkGrid()
+    {
+      Grid grid = new Grid();
 
+      player.MarkGridAt(1,2, grid);
+
+      Assert.AreEqual('X', grid.Spaces[1,2].Content);
+    }
   }
 }
