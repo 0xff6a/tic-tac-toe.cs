@@ -8,7 +8,6 @@ namespace TicTacToeApplication
   {
     public static void Main()
     {
-      /*
       string pName, oName;
       Game game;
 
@@ -20,18 +19,23 @@ namespace TicTacToeApplication
 
       game = new Game(pName, oName);
 
-      while(!game.Winner() && !game.IsDraw())
+      while(game.Winner == null && !game.IsDraw())
       {
+        Console.WriteLine(game.Board.Display());
         Console.WriteLine("Enter your move e.g row-column");
         string[] move = Console.ReadLine().Split('-');
-        game.Go(move[0], move[1]);
+        game.Go(int.Parse(move[0]), int.Parse(move[1]));
       }
 
-      if( game.Winner() )
+      if( game.Winner != null )
       {
-        Console.WriteLine("Congratulations! {0} Wins", game.Winner().Name);
+        Console.WriteLine("Congratulations! {0} Wins", game.Winner.Name);
       }
-      */
+      else 
+      {
+        Console.WriteLine("Draw!");
+      }
+
     }
   }
 }
