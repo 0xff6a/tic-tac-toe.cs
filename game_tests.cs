@@ -51,18 +51,18 @@ namespace TicTacToe
 
     [Test]
     //Checking for a winner
-    public void IsWinner()
+    public void HasWinner()
     {
       _setupChallengerWin();
 
-      Assert.IsTrue(game.IsWinner());
+      Assert.IsTrue(game.HasWinner(0, 2));
     }
 
     [Test]
     //Checking for a draw
     public void IsDraw()
     {
-      
+
     }
 
     [Test]
@@ -76,9 +76,9 @@ namespace TicTacToe
     {
       game.Go(0,0);
       game.Go(1,0);
-      game.Go(0,1);
       game.Go(1,1);
-      game.Go(0,2);
+      game.Go(2,1);
+      game.Go(2,2);
     }
 
   }
