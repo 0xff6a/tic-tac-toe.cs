@@ -4,6 +4,7 @@ using NUnit.Framework;
 namespace TicTacToeComponents
 {
   [TestFixture]
+  //Space class tests
   public class SpaceTest
   {
     Space space;
@@ -32,6 +33,33 @@ namespace TicTacToeComponents
       space.Mark('X');
       
       Assert.IsFalse(space.IsEmpty());
+    }
+  }
+
+  [TestFixture]
+  //Grid class tests
+  public class GridTest
+  {
+    Grid grid;
+
+    [SetUp]
+    public void Init()
+    {
+      grid = new Grid();
+    }
+
+    [Test]
+    public void Spaces()
+    {
+      Space[ , ] expected = new Space[3,3];
+
+      Assert.AreEqual(expected, grid.Spaces);
+    }
+
+    [Test]
+    public void Display()
+    {
+       
     }
   }
 }

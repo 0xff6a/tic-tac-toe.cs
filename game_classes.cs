@@ -20,6 +20,17 @@ namespace TicTacToeComponents
     {
       return content == default(char);
     }
+  }
+
+  public class Grid
+  {
+    private static int size = 3;
+    private Space[ , ] spaces = new Space[size, size];
+
+    public Space[ , ] Spaces
+    {
+      get { return spaces; }
+    }
 
 
   }
