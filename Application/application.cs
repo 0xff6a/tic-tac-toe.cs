@@ -23,6 +23,7 @@ namespace TicTacToeApplication
       {
         Console.WriteLine(game.Board.Display());
         Console.WriteLine("Enter your move e.g row-column");
+        
         string[] move = Console.ReadLine().Split('-');
         game.Go(int.Parse(move[0]), int.Parse(move[1]));
       }

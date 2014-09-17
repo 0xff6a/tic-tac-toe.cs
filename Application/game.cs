@@ -55,11 +55,8 @@ namespace TicTacToe
     {
       CurrentPlayer().MarkGridAt(row, column, board);
       
-      if(HasWinner(row, column))
-      {
-        winner = CurrentPlayer();
-      }
-      
+      SetWinnerIfDecided(row, column);
+
       ChangeTurn();
     }
 
@@ -77,6 +74,14 @@ namespace TicTacToe
     public bool IsUndecided()
     {
       return Winner == null && !IsDraw();
+    }
+
+    private void SetWinnerIfDecided(int moveRow, int moveColumn)
+    {
+      if(HasWinner(moveRow, moveColumn))
+      {
+        winner = CurrentPlayer();
+      }
     }
 
     private int moveCount()
