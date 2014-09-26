@@ -18,8 +18,14 @@ Classes:
 
 Running the application:
 ------------------------
-- WIP
+```shell
+$ mcs Application/*.cs
+$ mono Application/application.exe 
+```
 
 Running the test suite:
 -----------------------
-- WIP
+```shell
+$ mcs Application/*.cs Tests/*.cs -reference:nunit.framework.dll
+$ NUNIT-CONSOLE Application/application.exe
+```
