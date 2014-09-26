@@ -22,6 +22,7 @@ Running the application:
 $ mcs Application/*.cs
 $ mono Application/application.exe 
 ```
+Enter grid coordinates as 'row-column' e.g 0-0 will mark the top left corner
 
 Running the test suite:
 -----------------------
